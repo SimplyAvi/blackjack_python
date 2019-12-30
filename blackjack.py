@@ -112,9 +112,9 @@ def hit_or_stand(deck, hand):
         if x[0].lower == 'h':
             hit(deck, hand)
         
-        elif x[0] == 's'
-        print('player stands. Dealer is playing')
-        playing = False
+        elif x[0] == 's':
+            print('player stands. Dealer is playing')
+            playing = False
 
         else:
             print('Sorry, please enter a valid response')
