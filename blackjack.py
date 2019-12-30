@@ -56,9 +56,14 @@ class Hand:
     def add_card(self, card):
         self.cards.append(card)
         self.value += values[card.rank]
+        if card.rank == 'Ace':
+            self.aces += 1
 
     def adjust_for_ace(self):
-        pass
+        while self.value > 21 and self.aces:
+            self.value -= 10
+            self.aces -= 1
+            
 
 
 test_deck = Deck()
@@ -71,3 +76,5 @@ print(test_player.value)
 
 for card in test_player.cards:
     print(card)
+
+
