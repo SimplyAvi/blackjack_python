@@ -89,15 +89,34 @@ class Chips:
     def lose_bet(self):
         self.total -= self.bet
 
-    def take_bet(chips):
-        while True:
-            try:
-                chips.bet = int(input('How many chips would you liek to bet? '))
-            except ValueError:
-                print('Sorry, a bet must be an integer')
+def take_bet(chips):
+    while True:
+        try:
+            chips.bet = int(input('How many chips would you liek to bet? '))
+        except ValueError:
+            print('Sorry, a bet must be an integer')
+        else:
+            if chips.bet > chips.total:
+                print("sorry, your bet cannot exceed", chips.total)
             else:
-                if chips.bet > chips.total:
-                    print("sorry, your bet cannot exceed", chips.total)
-                else:
-                    break
+                break
+def hit(deck, hand):
+    hand.add_card(deck.deal())
+    hand.adjust_for_ace()
 
+def hit_or_stand(deck, hand):
+    global playing #controls while loop
+    while True:
+        x = input('would you like to hit or stand? Enter "h" or "s" ')
+
+        if x[0].lower == 'h':
+            hit(deck, hand)
+        
+        elif x[0] == 's'
+        print('player stands. Dealer is playing')
+        playing = False
+
+        else:
+            print('Sorry, please enter a valid response')
+            continue
+        break
