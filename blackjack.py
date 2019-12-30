@@ -43,3 +43,5 @@ class Deck:
     def deal(self):
         single_card = self.deck.pop()
         return single_card
+test_deck = Deck()
+print(test_deck)
